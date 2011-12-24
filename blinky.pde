@@ -26,7 +26,6 @@ void setup() {
   resetLEDs();
 }
 
-
 void loop() {
   int avail = Serial.available();
   if (avail) {
@@ -53,37 +52,6 @@ void alert() {
   blinker = !blinker;
   
   delay(300);
-}
-
-//void loop() {
-  //count up routine
-//  value = 255;
-//  digitalWrite(latchPin, LOW);
-////  for (int i = 0; i < 4; i++) {
-//    shiftOut(dataPin, clockPin, LSBFIRST, value);
-////  }
-//  digitalWrite(latchPin, HIGH);
-  
-  /*
-  int avail = Serial.available();
-  
-  if (avail) {
-    resetLEDs();
-    digitalWrite(latchPin, LOW);
-    while (Serial.available()) {
-      shiftOut(dataPin, clockPin, LSBFIRST, Serial.read());
-    }
-    digitalWrite(latchPin, HIGH);
-  }
-  */
-//}
-
-void allTheThings() {
-  digitalWrite(latchPin, LOW);
-  for (int i = 0; i < 4; i++) {
-    shiftOut(dataPin, clockPin, LSBFIRST, 0xF0);
-  }
-  digitalWrite(latchPin, HIGH); 
 }
 
 void resetLEDs() {
